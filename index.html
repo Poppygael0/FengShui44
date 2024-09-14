@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Meta etiquetas y enlaces a CSS y JS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Armonía Feng Shui</title>
+    <meta name="description" content="Descubre el arte del Feng Shui con Armonía Feng Shui.">
+    <!-- Enlace a tu archivo de estilos CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Enlace a Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Enlaces a GSAP para animaciones -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+</head>
+<body class="index">
+    <header>
+        <!-- Código del encabezado -->
+        <div class="top-bar">
+            <div class="social-links">
+                <a href="https://www.facebook.com/Fengshui44commx/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/mfengshui44/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/fengshui444" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+            <img src="logo.png" alt="Logo de Armonía Feng Shui" class="logo">
+            <div class="date" id="current-date"></div>
+        </div>
+        <nav class="container">
+            <ul>
+                <li><a href="index.html" class="active">Inicio</a></li>
+                <li><a href="quien-soy.html">Quién Soy</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="feng-shui.html">Feng Shui</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- No incluimos el espaciador del encabezado en index.html -->
+    <!-- <div class="header-spacer"></div> -->
+
+    <main>
+        <!-- Sección Hero con el video -->
+        <section class="hero">
+            <video autoplay muted loop id="hero-video">
+                <source src="video.mp4" type="video/mp4">
+                Tu navegador no soporta el video HTML5.
+            </video>
+            <div class="hero-content">
+                <h2>Bienvenido a Armonía Feng Shui</h2>
+                <p>Transforma tu espacio, transforma tu vida.</p>
+                <a href="contacto.html" class="cta-button">Contáctame</a>
+            </div>
+        </section>
+
+        <!-- Sección de Noticias Destacadas -->
+        <section class="news-section">
+            <div class="container">
+                <h2>Noticias Destacadas de Feng Shui</h2>
+                <div class="content-grid">
+                    <!-- Artículo 1 -->
+                    <div class="content-item">
+                        <img src="noticia1.jpg" alt="Título de la noticia 1">
+                        <div class="content-item-content">
+                            <h3>Título de la Noticia 1</h3>
+                            <p>Resumen breve de la noticia o artículo destacado.</p>
+                            <a href="articulo1.html" class="cta-button">Leer Más</a>
+                        </div>
+                    </div>
+                    <!-- Artículo 2 -->
+                    <div class="content-item">
+                        <img src="noticia2.jpg" alt="Título de la noticia 2">
+                        <div class="content-item-content">
+                            <h3>Título de la Noticia 2</h3>
+                            <p>Resumen breve de la noticia o artículo destacado.</p>
+                            <a href="articulo2.html" class="cta-button">Leer Más</a>
+                        </div>
+                    </div>
+                    <!-- Artículo 3 -->
+                    <div class="content-item">
+                        <img src="noticia3.jpg" alt="Título de la noticia 3">
+                        <div class="content-item-content">
+                            <h3>Título de la Noticia 3</h3>
+                            <p>Resumen breve de la noticia o artículo destacado.</p>
+                            <a href="articulo3.html" class="cta-button">Leer Más</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Lo Más Popular -->
+        <section class="popular-section">
+            <div class="container">
+                <h2>Lo Más Popular</h2>
+                <div class="content-grid">
+                    <!-- Artículo 1 -->
+                    <div class="content-item">
+                        <img src="popular1.jpg" alt="Título del artículo popular 1">
+                        <div class="content-item-content">
+                            <h3>Título del Artículo Popular 1</h3>
+                            <p>Resumen breve del artículo popular.</p>
+                            <a href="articulo-popular1.html" class="cta-button">Leer Más</a>
+                        </div>
+                    </div>
+                    <!-- Artículo 2 -->
+                    <div class="content-item">
+                        <img src="popular2.jpg" alt="Título del artículo popular 2">
+                        <div class="content-item-content">
+                            <h3>Título del Artículo Popular 2</h3>
+                            <p>Resumen breve del artículo popular.</p>
+                            <a href="articulo-popular2.html" class="cta-button">Leer Más</a>
+                        </div>
+                    </div>
+                    <!-- Artículo 3 -->
+                    <div class="content-item">
+                        <img src="popular3.jpg" alt="Título del artículo popular 3">
+                        <div class="content-item-content">
+                            <h3>Título del Artículo Popular 3</h3>
+                            <p>Resumen breve del artículo popular.</p>
+                            <a href="articulo-popular3.html" class="cta-button">Leer Más</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Tendencias en Feng Shui -->
+        <section class="trends-section">
+            <div class="container">
+                <h2>Tendencias en Feng Shui</h2>
+                <div class="content-grid">
+                    <!-- Artículo 1 -->
+                    <div class="content-item">
+                        <img src="tendencia1.jpg" alt="Título de la tendencia 1">
+                        <div class="content-item-content">
+                            <h3>Título de la Tendencia 1</h3>
+                            <p>Resumen breve de la tendencia actual.</p>
+                            <a href="tendencia1.html" class="cta-button">Leer Más</a>
+                        </div>
+                    </div>
+                    <!-- Artículo 2 -->
+                    <div class="content-item">
+                        <img src="tendencia2.jpg" alt="Título de la tendencia 2">
+                        <div class="content-item-content">
+                            <h3>Título de la Tendencia 2</h3>
+                            <p>Resumen breve de la tendencia actual.</p>
+                            <a href="tendencia2.html" class="cta-button">Leer Más</a>
+                        </div>
+                    </div>
+                    <!-- Artículo 3 -->
+                    <div class="content-item">
+                        <img src="tendencia3.jpg" alt="Título de la tendencia 3">
+                        <div class="content-item-content">
+                            <h3>Título de la Tendencia 3</h3>
+                            <p>Resumen breve de la tendencia actual.</p>
+                            <a href="tendencia3.html" class="cta-button">Leer Más</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <!-- Código del pie de página -->
+        <p>&copy; 2023 Armonía Feng Shui. Todos los derechos reservados.</p>
+        <nav>
+            <!-- Menú de navegación en el pie de página -->
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="quien-soy.html">Quién Soy</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="feng-shui.html">Feng Shui</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        <div id="visitor-counter">Visitantes: <span id="count">0</span></div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mostrar la fecha actual
+        const currentDate = new Date();
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        document.getElementById('current-date').textContent = currentDate.toLocaleDateString('es-ES', options);
+
+        // Contador de visitantes
+        let visitorCount = localStorage.getItem('visitorCount') || 0;
+        visitorCount++;
+        localStorage.setItem('visitorCount', visitorCount);
+        document.getElementById('count').textContent = visitorCount;
+
+        // Animaciones con GSAP
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.from('.hero-content', {
+            opacity: 0,
+            y: 50,
+            duration: 1,
+            delay: 0.5
+        });
+
+        gsap.from('.content-item', {
+            opacity: 0,
+            y: 50,
+            stagger: 0.2,
+            duration: 0.8,
+            scrollTrigger: {
+                trigger: '.content-grid',
+                start: 'top 80%',
+                toggleActions: 'play none none none'
+            }
+        });
+    </script>
+</body>
+</html>

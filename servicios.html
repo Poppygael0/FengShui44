@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Meta etiquetas y enlaces a CSS y JS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios - Armonía Feng Shui</title>
+    <meta name="description" content="Explora nuestros servicios de consultoría de Feng Shui para hogares y negocios.">
+    <!-- Enlace a Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Enlace a tu archivo de estilos -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Enlaces a GSAP para animaciones -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <header>
+        <!-- Código del encabezado -->
+        <div class="top-bar">
+            <div class="social-links">
+                <a href="https://facebook.com/armoniafengshui" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://instagram.com/armoniafengshui" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://twitter.com/armoniafengshui" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+            <img src="logo.png" alt="Armonía Feng Shui Logo" class="logo">
+            <div class="date" id="current-date"></div>
+        </div>
+        <nav class="container">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="quien-soy.html">Quién Soy</a></li>
+                <li><a href="servicios.html" class="active">Servicios</a></li>
+                <li><a href="feng-shui.html">Feng Shui</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Espaciador del Encabezado -->
+    <div class="header-spacer"></div>
+
+    <main>
+        <h1>Servicios</h1>
+
+        <section class="services-section">
+            <div class="services-grid">
+                <!-- Servicio 1 -->
+                <div class="service-card">
+                    <i class="fas fa-home service-icon"></i>
+                    <h3>Consultoría Residencial</h3>
+                    <p>Optimiza la energía de tu hogar para fomentar la armonía, la salud y la prosperidad de tu familia.</p>
+                    <a href="contacto.html" class="cta-button">Solicitar Información</a>
+                </div>
+                <!-- Servicio 2 -->
+                <div class="service-card">
+                    <i class="fas fa-building service-icon"></i>
+                    <h3>Consultoría Empresarial</h3>
+                    <p>Mejora el ambiente de trabajo y aumenta la productividad y el éxito de tu negocio.</p>
+                    <a href="contacto.html" class="cta-button">Solicitar Información</a>
+                </div>
+                <!-- Servicio 3 -->
+                <div class="service-card">
+                    <i class="fas fa-leaf service-icon"></i>
+                    <h3>Diseño de Jardines Feng Shui</h3>
+                    <p>Crea espacios exteriores que reflejen equilibrio y conexión con la naturaleza.</p>
+                    <a href="contacto.html" class="cta-button">Solicitar Información</a>
+                </div>
+                <!-- Servicio 4 -->
+                <div class="service-card">
+                    <i class="fas fa-yin-yang service-icon"></i>
+                    <h3>Formación y Talleres</h3>
+                    <p>Aprende los fundamentos del Feng Shui y cómo aplicarlos en tu vida diaria.</p>
+                    <a href="contacto.html" class="cta-button">Solicitar Información</a>
+                </div>
+                <!-- Servicio 5 -->
+                <div class="service-card">
+                    <i class="fas fa-compass service-icon"></i>
+                    <h3>Estudios Personalizados</h3>
+                    <p>Obtén análisis detallados y soluciones a medida para tus necesidades específicas.</p>
+                    <a href="contacto.html" class="cta-button">Solicitar Información</a>
+                </div>
+                <!-- Servicio 6 -->
+                <div class="service-card">
+                    <i class="fas fa-paint-brush service-icon"></i>
+                    <h3>Decoración Feng Shui</h3>
+                    <p>Transforma tus espacios con diseños que armonizan estética y energía positiva.</p>
+                    <a href="contacto.html" class="cta-button">Solicitar Información</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Código del pie de página -->
+        <p>&copy; 2023 Armonía Feng Shui. Todos los derechos reservados.</p>
+        <div id="visitor-counter">Visitantes: <span id="count">0</span></div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mostrar la fecha actual
+        const currentDate = new Date();
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        document.getElementById('current-date').textContent = currentDate.toLocaleDateString('es-ES', options);
+
+        // Contador de visitantes
+        let visitorCount = localStorage.getItem('visitorCount') || 0;
+        visitorCount++;
+        localStorage.setItem('visitorCount', visitorCount);
+        document.getElementById('count').textContent = visitorCount;
+
+        // Animaciones con GSAP
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.from('.service-card', {
+            opacity: 0,
+            y: 50,
+            duration: 1,
+            stagger: 0.3,
+            scrollTrigger: {
+                trigger: '.services-section',
+                start: 'top 80%',
+                toggleActions: 'play none none none'
+            }
+        });
+
+        // Animación al pasar el ratón por encima de las tarjetas de servicio
+        const serviceCards = document.querySelectorAll('.service-card');
+        serviceCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                gsap.to(card, { scale: 1.05, duration: 0.3 });
+                gsap.to(card.querySelector('.service-icon'), { scale: 1.1, duration: 0.3 });
+            });
+            card.addEventListener('mouseleave', () => {
+                gsap.to(card, { scale: 1, duration: 0.3 });
+                gsap.to(card.querySelector('.service-icon'), { scale: 1, duration: 0.3 });
+            });
+        });
+    </script>
+</body>
+</html>
