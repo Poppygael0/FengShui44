@@ -31,6 +31,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    text-align: center;
 }
 
 /* Encabezado */
@@ -46,10 +47,14 @@ header {
 
 /* Barra Superior */
 .top-bar {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr; /* Tres columnas: la del medio para el logo */
     align-items: center;
     padding: 10px 20px;
+}
+
+.social-links {
+    justify-self: start; /* Alinea las redes sociales a la izquierda */
 }
 
 .social-links a {
@@ -63,11 +68,19 @@ header {
     color: var(--secondary-color);
 }
 
+.logo-container {
+    flex: 1;
+    display: flex;
+    justify-content: center; /* Centra el logo horizontalmente */
+}
+
 .logo {
     height: 50px;
+    justify-self: center; /* Centra el logo en su columna */
 }
 
 .date {
+    justify-self: end; /* Alinea la fecha a la derecha */
     color: white;
 }
 
@@ -125,9 +138,6 @@ h2 {
 h3 {
     font-size: 1.5em;
 }
-
-/* Sección Hero */
-/* ... (el resto de tu CSS permanece igual) ... */
 
 /* Sección Hero */
 .hero {
@@ -215,9 +225,6 @@ body.index main {
 body.index .header-spacer {
     display: none;
 }
-
-/* ... (resto del CSS permanece igual) ... */
-
 
 .hero h2 {
     font-size: 2.5em;
@@ -332,32 +339,51 @@ body.index .header-spacer {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     margin-bottom: 40px;
+    padding: 40px;
 }
 
-.profile-image {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin: 20px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
-}
-
-.profile-content {
-    max-width: 800px;
+.image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 20px;
 }
 
+.profile-image {
+    width: 150px; /* Tamaño más pequeño */
+    height: 150px;
+    border-radius: 50%; /* Imagen circular */
+    object-fit: cover; /* Recorta la imagen para ajustarse */
+    object-position: top; /* Centra la imagen en la parte superior (cara) */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Sombra sutil para resaltar la imagen */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efecto suave */
+}
+
+.profile-image:hover {
+    transform: scale(1.05); /* Efecto de zoom al pasar el ratón */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Aumenta la sombra en hover */
+}
+
+.profile-content {
+    flex: 2;
+    max-width: 600px;
+    padding: 20px;
+    text-align: left;
+}
+
 .profile-content h2 {
-    font-size: 2em;
+    font-size: 2.5em;
     margin-bottom: 20px;
+    color: var(--primary-color); /* Color principal definido en el diseño */
 }
 
 .profile-content p {
     margin-bottom: 15px;
-    text-align: justify;
+    color: #555;
+    line-height: 1.8;
 }
 
 /* Secciones de Experiencia y Filosofía */
@@ -713,16 +739,27 @@ footer nav ul li a:hover {
     }
 
     /* Sección de Perfil */
+    /* Sección de Perfil */
     .profile-section {
         flex-direction: column;
         text-align: center;
+        padding: 20px;
     }
 
     .profile-image {
-        margin-right: 0;
         margin-bottom: 20px;
+        width: 120px; /* Tamaño más pequeño en móviles */
+        height: 120px;
     }
 
+    .profile-content {
+        text-align: center;
+    }
+
+    .profile-content h2 {
+        font-size: 2em;
+    }
+}
     .services-grid, .five-elements-grid, .feng-shui-principles {
         grid-template-columns: 1fr;
     }
@@ -743,4 +780,3 @@ footer nav ul li a:hover {
     .principle-card {
         padding: 15px;
     }
-}
