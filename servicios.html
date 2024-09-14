@@ -41,51 +41,60 @@
     <div class="header-spacer"></div>
 
     <main>
-        <h1>Servicios</h1>
+        <h1>Servicios de Feng Shui Personalizado</h1>
 
         <section class="services-section">
             <div class="services-grid">
                 <!-- Servicio 1 -->
                 <div class="service-card">
                     <i class="fas fa-home service-icon"></i>
-                    <h3>Consultoría Residencial</h3>
-                    <p>Optimiza la energía de tu hogar para fomentar la armonía, la salud y la prosperidad de tu familia.</p>
+                    <h3>Consultoría de Feng Shui para Hogares</h3>
+                    <p>Un estudio completo de tu hogar, enfocado en la armonización de los espacios. Utilizamos tu fecha y hora de nacimiento para identificar las energías favorables y desfavorables en tu casa, desde la ubicación de la puerta principal hasta las habitaciones más importantes. Ajusta tu espacio para atraer salud, amor, y prosperidad.</p>
                     <a href="contacto.html" class="cta-button">Solicitar Información</a>
                 </div>
+                
                 <!-- Servicio 2 -->
                 <div class="service-card">
                     <i class="fas fa-building service-icon"></i>
-                    <h3>Consultoría Empresarial</h3>
-                    <p>Mejora el ambiente de trabajo y aumenta la productividad y el éxito de tu negocio.</p>
+                    <h3>Consultoría de Feng Shui para Negocios</h3>
+                    <p>Este servicio está diseñado para mejorar la energía de tu lugar de trabajo. Al analizar la disposición de tu oficina o empresa, identificamos cómo puedes potenciar la productividad y el éxito, minimizando las energías negativas que pueden estar afectando el ambiente laboral. Incrementa la prosperidad y el bienestar de tu equipo.</p>
                     <a href="contacto.html" class="cta-button">Solicitar Información</a>
                 </div>
+
                 <!-- Servicio 3 -->
                 <div class="service-card">
-                    <i class="fas fa-leaf service-icon"></i>
-                    <h3>Diseño de Jardines Feng Shui</h3>
-                    <p>Crea espacios exteriores que reflejen equilibrio y conexión con la naturaleza.</p>
+                    <i class="fas fa-compass service-icon"></i>
+                    <h3>Consultoría Online Personalizada</h3>
+                    <p>Ofrecemos consultorías de Feng Shui completamente en línea, adaptadas a tu hogar o negocio, sin importar la ubicación. A través de videollamadas por Zoom, recibirás un análisis detallado de tu espacio, además de recomendaciones precisas y personalizadas para armonizarlo y atraer las mejores energías.</p>
                     <a href="contacto.html" class="cta-button">Solicitar Información</a>
                 </div>
+
                 <!-- Servicio 4 -->
                 <div class="service-card">
                     <i class="fas fa-yin-yang service-icon"></i>
-                    <h3>Formación y Talleres</h3>
-                    <p>Aprende los fundamentos del Feng Shui y cómo aplicarlos en tu vida diaria.</p>
+                    <h3>Consultoría Feng Shui para Proyectos Específicos</h3>
+                    <p>¿Estás reformando tu hogar o empezando un nuevo negocio? Te ayudamos a planificar y organizar la distribución energética adecuada desde el principio. Utiliza el poder del Feng Shui en el diseño de interiores o en la expansión de tu empresa para asegurar el éxito en cada paso del proceso.</p>
                     <a href="contacto.html" class="cta-button">Solicitar Información</a>
                 </div>
-                <!-- Servicio 5 -->
-                <div class="service-card">
-                    <i class="fas fa-compass service-icon"></i>
-                    <h3>Estudios Personalizados</h3>
-                    <p>Obtén análisis detallados y soluciones a medida para tus necesidades específicas.</p>
-                    <a href="contacto.html" class="cta-button">Solicitar Información</a>
+            </div>
+        </section>
+
+        <!-- Diferenciación y Modalidades -->
+        <section class="differentiation-section">
+            <h2>¿Qué diferencia nuestros servicios?</h2>
+            <p>Nuestros servicios están completamente personalizados para ajustarse a las necesidades de cada cliente, ya sea en el hogar o en el entorno laboral. Utilizamos herramientas tradicionales del Feng Shui, como la brújula, para analizar la distribución energética de tu espacio, pero también aplicamos enfoques modernos que aseguran resultados inmediatos y tangibles.</p>
+            <div class="differentiation-grid">
+                <div class="differentiation-item">
+                    <h3>Feng Shui para Hogares</h3>
+                    <p>En la consultoría de tu hogar, identificamos las áreas que afectan aspectos clave de tu vida como el dinero, la salud y las relaciones personales. La ubicación de la puerta principal, la disposición de los muebles y las orientaciones cardinales de tu casa se ajustan para maximizar las energías positivas. Esto te permitirá crear un ambiente equilibrado que potencie el bienestar familiar.</p>
                 </div>
-                <!-- Servicio 6 -->
-                <div class="service-card">
-                    <i class="fas fa-paint-brush service-icon"></i>
-                    <h3>Decoración Feng Shui</h3>
-                    <p>Transforma tus espacios con diseños que armonizan estética y energía positiva.</p>
-                    <a href="contacto.html" class="cta-button">Solicitar Información</a>
+                <div class="differentiation-item">
+                    <h3>Feng Shui para Empresas</h3>
+                    <p>En el ámbito empresarial, nuestro enfoque está en mejorar la productividad y la prosperidad. Identificamos áreas clave dentro de tu oficina que influyen en el éxito financiero y la motivación del equipo. Desde la orientación de las entradas hasta la ubicación del personal, cada detalle es ajustado para potenciar las oportunidades de crecimiento y éxito.</p>
+                </div>
+                <div class="differentiation-item">
+                    <h3>Consultorías Online</h3>
+                    <p>La modalidad online te ofrece la misma atención personalizada, con la flexibilidad de realizar la consulta desde cualquier parte del mundo. Mediante videollamadas, analizamos el plano de tu espacio en tiempo real, brindándote soluciones efectivas que puedes implementar de inmediato.</p>
                 </div>
             </div>
         </section>
@@ -125,17 +134,16 @@
             }
         });
 
-        // Animación al pasar el ratón por encima de las tarjetas de servicio
-        const serviceCards = document.querySelectorAll('.service-card');
-        serviceCards.forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                gsap.to(card, { scale: 1.05, duration: 0.3 });
-                gsap.to(card.querySelector('.service-icon'), { scale: 1.1, duration: 0.3 });
-            });
-            card.addEventListener('mouseleave', () => {
-                gsap.to(card, { scale: 1, duration: 0.3 });
-                gsap.to(card.querySelector('.service-icon'), { scale: 1, duration: 0.3 });
-            });
+        gsap.from('.differentiation-item', {
+            opacity: 0,
+            y: 50,
+            duration: 1,
+            stagger: 0.3,
+            scrollTrigger: {
+                trigger: '.differentiation-section',
+                start: 'top 80%',
+                toggleActions: 'play none none none'
+            }
         });
     </script>
 </body>
