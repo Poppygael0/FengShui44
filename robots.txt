@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.fengshui44.com/sitemap.xml
