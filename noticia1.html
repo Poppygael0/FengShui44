@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Feng Shui en el Hogar: Crea Armonía en 2024</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="social-links">
+                <a href="https://www.facebook.com/Fengshui44commx/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/mfengshui44/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/fengshui444" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://t.me/fengshui44" target="_blank" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+            </div>
+            <img src="logo.png" alt="Logo de Armonía Feng Shui" class="logo">
+            <div class="date" id="current-date"></div>
+        </div>
+        <nav class="container">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="quien-soy.html">Quién Soy</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="feng-shui.html">Feng Shui</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Espaciador del Encabezado -->
+    <div class="header-spacer"></div>
+
+    <main class="container">
+        <h1>El Feng Shui en el Hogar: Crea Armonía en 2024</h1>
+        <section class="news-content">
+            <p>Descubre cómo el Feng Shui puede ayudarte a transformar tu hogar en un santuario de armonía y bienestar en el año 2024.</p>
+            <img src="noticia.jpg" alt="Feng Shui en el Hogar" class="responsive-image">
+
+            <h2>Transforma tu Espacio con Feng Shui</h2>
+            <p>El Feng Shui es una técnica milenaria que nos permite equilibrar las energías en nuestros hogares. En 2024, el enfoque estará en crear espacios de calma y rejuvenecimiento, esenciales para el bienestar.</p>
+
+            <h3>Consejos para Aplicar el Feng Shui en tu Hogar</h3>
+            <p>Usar colores suaves, disponer los muebles de manera que el flujo de energía sea libre y aprovechar la luz natural son algunas de las técnicas más recomendadas para el próximo año.</p>
+
+            <!-- Botón de llamada a la acción -->
+            <div class="cta-container">
+                <a href="quien-soy.html" class="cta-button">Conoce más sobre nuestros servicios personalizados</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Armonía Feng Shui. Todos los derechos reservados.</p>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="quien-soy.html">Quién Soy</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="feng-shui.html">Feng Shui</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        <div id="visitor-counter">Visitantes: <span id="count">0</span></div>
+    </footer>
+
+    <!-- Botón de control de música -->
+    <button id="music-control" aria-label="Controlar la música" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
+        <i class="fas fa-play"></i>
+        <input type="range" id="volume-control" min="0" max="1" step="0.1" value="0.5" style="vertical-align: middle;">
+    </button>
+    
+    <audio id="background-music" src="musica-de-fondo.mp3" loop></audio>
+
+    <script>
+        // Mostrar la fecha actual
+        const currentDate = new Date();
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        document.getElementById('current-date').textContent = currentDate.toLocaleDateString('es-ES', options);
+
+        // Contador de visitantes
+        let visitorCount = localStorage.getItem('visitorCount') || 0;
+        visitorCount++;
+        localStorage.setItem('visitorCount', visitorCount);
+        document.getElementById('count').textContent = visitorCount;
+
+        // Control de música
+        const musicControl = document.getElementById('music-control');
+        const backgroundMusic = document.getElementById('background-music');
+        const volumeControl = document.getElementById('volume-control');
+        let isPlaying = false;
+
+        // Reproducir música automáticamente
+        backgroundMusic.play();
+        musicControl.innerHTML = '<i class="fas fa-pause"></i>';
+        isPlaying = true;
+
+        // Alternar reproducción de música
+        musicControl.addEventListener('click', function () {
+            if (isPlaying) {
+                backgroundMusic.pause();
+                musicControl.innerHTML = '<i class="fas fa-play"></i>';
+            } else {
+                backgroundMusic.play();
+                musicControl.innerHTML = '<i class="fas fa-pause"></i>';
+            }
+            isPlaying = !isPlaying;
+        });
+
+        volumeControl.addEventListener('input', function () {
+            backgroundMusic.volume = volumeControl.value;
+        });
+
+        // Animaciones con GSAP para enriquecer la experiencia
+        gsap.from('h1', {
+            opacity: 0,
+            y: -50,
+            duration: 1,
+            ease: "power2.out"
+        });
+
+        gsap.from('.news-content img', {
+            opacity: 0,
+            scale: 0.9,
+            duration: 1,
+            scrollTrigger: {
+                trigger: '.news-content img',
+                start: 'top 80%'
+            }
+        });
+
+        gsap.from('.news-content p', {
+            opacity: 0,
+            x: 50,
+            stagger: 0.3,
+            duration: 0.8,
+            scrollTrigger: {
+                trigger: '.news-content',
+                start: 'top 90%'
+            }
+        });
+    </script>
+</body>
+</html>
