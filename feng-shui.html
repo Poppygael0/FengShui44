@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- He eliminado la etiqueta <base> para evitar problemas con las rutas -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feng Shui - Armonía Feng Shui</title>
@@ -65,7 +64,6 @@
                 <div class="element water">Agua</div>
             </div>
         </div>
-        
 
         <div class="feng-shui-principles">
             <!-- Tarjeta 1 -->
@@ -135,10 +133,6 @@
             <div class="bagua-2d"></div>
         </div>
 
-        <div class="feng-shui-quiz">
-            <h2>¿Cuánto sabes sobre Feng Shui?</h2>
-            <div id="quiz-container"></div>
-        </div>
     </main>
 
     <footer>
@@ -158,6 +152,31 @@
         visitorCount++;
         localStorage.setItem('visitorCount', visitorCount);
         document.getElementById('count').textContent = visitorCount;
+
+        // Construir el Mapa Bagua
+        const baguaAreas = [
+            { name: 'Carrera', color: '#000000' },
+            { name: 'Conocimiento', color: '#0000FF' },
+            { name: 'Familia', color: '#008000' },
+            { name: 'Riqueza', color: '#800080' },
+            { name: 'Fama', color: '#FF0000' },
+            { name: 'Relaciones', color: '#FFC0CB' },
+            { name: 'Hijos', color: '#FFFFFF', textColor: '#000' },
+            { name: 'Ayudantes', color: '#808080' },
+            { name: 'Centro', color: '#FFFF00', textColor: '#000' }
+        ];
+
+        const bagua2d = document.querySelector('.bagua-2d');
+
+        baguaAreas.forEach(area => {
+            const div = document.createElement('div');
+            div.className = 'bagua-area';
+            div.style.backgroundColor = area.color;
+            div.style.color = area.textColor || '#FFF';
+            div.textContent = area.name;
+            div.style.border = "1px solid #000"; // Asegura que cada área tenga un borde
+            bagua2d.appendChild(div);
+        });
 
         // Animaciones con GSAP
         gsap.registerPlugin(ScrollTrigger);
@@ -204,107 +223,6 @@
             }
         });
 
-        // Animación al pasar el ratón por encima de las tarjetas de principio
-        const principleCards = document.querySelectorAll('.principle-card');
-        principleCards.forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                gsap.to(card, { scale: 1.05, duration: 0.3 });
-                gsap.to(card.querySelector('.principle-icon'), { rotate: 360, duration: 0.3 });
-                gsap.to(card.querySelector('.principle-details'), { top: '0%', duration: 0.3 });
-            });
-            card.addEventListener('mouseleave', () => {
-                gsap.to(card, { scale: 1, duration: 0.3 });
-                gsap.to(card.querySelector('.principle-icon'), { rotate: 0, duration: 0.3 });
-                gsap.to(card.querySelector('.principle-details'), { top: '100%', duration: 0.3 });
-            });
-        });
-
-        // Construir el Mapa Bagua
-        const baguaAreas = [
-            { name: 'Carrera', color: '#000000' },
-            { name: 'Conocimiento', color: '#0000FF' },
-            { name: 'Familia', color: '#008000' },
-            { name: 'Riqueza', color: '#800080' },
-            { name: 'Fama', color: '#FF0000' },
-            { name: 'Relaciones', color: '#FFC0CB' },
-            { name: 'Hijos', color: '#FFFFFF', textColor: '#000' },
-            { name: 'Ayudantes', color: '#808080' },
-            { name: 'Centro', color: '#FFFF00' }
-        ];
-
-        const bagua2d = document.querySelector('.bagua-2d');
-        baguaAreas.forEach(area => {
-            const div = document.createElement('div');
-            div.className = 'bagua-area';
-            div.style.backgroundColor = area.color;
-            div.style.color = area.textColor || '#FFF';
-            div.textContent = area.name;
-            bagua2d.appendChild(div);
-        });
-
-        // Quiz de Feng Shui
-        const quizContainer = document.getElementById('quiz-container');
-        const quizData = [
-            {
-                question: "¿Cuál es el propósito principal del Feng Shui?",
-                options: ["Decoración", "Armonizar energías", "Ejercicio", "Cocina"],
-                correct: 1
-            },
-            {
-                question: "¿Cuántos elementos principales hay en el Feng Shui?",
-                options: ["3", "5", "7", "9"],
-                correct: 1
-            },
-            {
-                question: "¿Qué representa el Yin y Yang en el Feng Shui?",
-                options: ["Balance", "Conflicto", "Poder", "Riqueza"],
-                correct: 0
-            }
-        ];
-
-        function buildQuiz() {
-            const output = [];
-            quizData.forEach((q, i) => {
-                const answers = [];
-                q.options.forEach((option, index) => {
-                    answers.push(
-                        `<label>
-                          <input type="radio" name="question${i}" value="${index}">
-                          ${option}
-                        </label>`
-                    );
-                });
-                output.push(
-                    `<div class="question">
-                      <h3>${q.question}</h3>
-                      <div class="answers">${answers.join('')}</div>
-                    </div>`
-                );
-            });
-            quizContainer.innerHTML = output.join('') + '<button id="submit-quiz">Enviar</button>';
-
-            document.getElementById('submit-quiz').addEventListener('click', showResults);
-        }
-
-        function showResults() {
-            const answerContainers = quizContainer.querySelectorAll('.answers');
-            let correct = 0;
-            quizData.forEach((q, i) => {
-                const answerContainer = answerContainers[i];
-                const selector = `input[name=question${i}]:checked`;
-                const userAnswer = (answerContainer.querySelector(selector) || {}).value;
-                if (userAnswer == q.correct) {
-                    correct++;
-                    answerContainers[i].style.color = 'green';
-                } else {
-                    answerContainers[i].style.color = 'red';
-                }
-            });
-            quizContainer.innerHTML += `<p>Has acertado ${correct} de ${quizData.length} preguntas.</p>`;
-        }
-
-        // Construir el quiz al cargar la página
-        buildQuiz();
     </script>
 </body>
 </html>

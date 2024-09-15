@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- Meta etiquetas y enlaces a CSS y JS -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio - Armonía Feng Shui</title>
     <meta name="description" content="Descubre el arte del Feng Shui con Armonía Feng Shui.">
-    <!-- Enlace a tu archivo de estilos CSS -->
     <link rel="stylesheet" href="style.css">
     <!-- Enlace a Font Awesome para iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Enlaces a Swiper.js para la galería -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <!-- Enlaces a GSAP para animaciones -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
@@ -21,9 +21,9 @@
                 <a href="https://www.facebook.com/Fengshui44commx/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
                 <a href="https://www.instagram.com/mfengshui44/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                 <a href="https://x.com/fengshui444" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://t.me/FengShuiHarmony" target="_blank" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
             </div>
             
-            <!-- Nuevo contenedor para centrar el logo -->
             <div class="logo-container">
                 <img src="logo.png" alt="Logo de Armonía Feng Shui" class="logo">
             </div>
@@ -41,11 +41,8 @@
         </nav>
     </header>
 
-    <!-- No incluimos el espaciador del encabezado en index.html -->
-    <!-- <div class="header-spacer"></div> -->
-
     <main>
-        <!-- Sección Hero con el video -->
+        <!-- Sección Hero -->
         <section class="hero">
             <video autoplay muted loop id="hero-video">
                 <source src="video.mp4" type="video/mp4">
@@ -58,114 +55,73 @@
             </div>
         </section>
 
-        <!-- Sección de Noticias Destacadas -->
-        <section class="news-section">
-            <div class="container">
-                <h2>Noticias Destacadas de Feng Shui</h2>
-                <div class="content-grid">
-                    <!-- Artículo 1 -->
-                    <div class="content-item">
-                        <img src="noticia1.jpg" alt="Título de la noticia 1">
-                        <div class="content-item-content">
-                            <h3>Título de la Noticia 1</h3>
-                            <p>Resumen breve de la noticia o artículo destacado.</p>
-                            <a href="articulo1.html" class="cta-button">Leer Más</a>
-                        </div>
-                    </div>
-                    <!-- Artículo 2 -->
-                    <div class="content-item">
-                        <img src="noticia2.jpg" alt="Título de la noticia 2">
-                        <div class="content-item-content">
-                            <h3>Título de la Noticia 2</h3>
-                            <p>Resumen breve de la noticia o artículo destacado.</p>
-                            <a href="articulo2.html" class="cta-button">Leer Más</a>
-                        </div>
-                    </div>
-                    <!-- Artículo 3 -->
-                    <div class="content-item">
-                        <img src="noticia3.jpg" alt="Título de la noticia 3">
-                        <div class="content-item-content">
-                            <h3>Título de la Noticia 3</h3>
-                            <p>Resumen breve de la noticia o artículo destacado.</p>
-                            <a href="articulo3.html" class="cta-button">Leer Más</a>
-                        </div>
-                    </div>
+<!-- Sección de Noticias Destacadas -->
+<section class="news-section">
+    <div class="container">
+        <h2>Noticias Destacadas de Feng Shui</h2>
+        <div class="content-grid">
+            <!-- Noticia 1 -->
+            <div class="content-item">
+                <img src="noticia.jpg" alt="Feng Shui en el Hogar Crea Armonía en 2024">
+                <div class="content-item-content">
+                    <h3>Feng Shui en el Hogar : Crea Armonía en 2024</h3>
+                    <p>Descubre cómo el Feng Shui puede ayudarte a atraer la prosperidad en 2024. Te ofrecemos consejos clave para optimizar tu espacio...</p>
+                    <a href="noticia1.html" class="cta-button">Leer Más</a>
                 </div>
+            </div>
+            <!-- Noticia 2 -->
+            <div class="content-item">
+                <img src="armonia.jpeg" alt="Feng Shui para la Salud">
+                <div class="content-item-content">
+                    <h3>Feng Shui para Mejorar la Salud en 2024</h3>
+                    <p>La salud es primordial. Aprende cómo el Feng Shui puede mejorar tu bienestar físico y emocional en el nuevo año con simples ajustes...</p>
+                    <a href="noticia2.html" class="cta-button">Leer Más</a>
+                </div>
+            </div>
+            <!-- Noticia 3 -->
+            <div class="content-item">
+                <img src="kua.jpg" alt="Número Kua">
+                <div class="content-item-content">
+                    <h3>Descubre Tu Número Kua y Cómo Impacta en Tu Vida</h3>
+                    <p>El número Kua es una herramienta fundamental en el Feng Shui para determinar direcciones favorables y cómo aprovechar la energía de tu entorno...</p>
+                    <a href="noticia3.html" class="cta-button">Leer Más</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+        <!-- Sección de la Galería de Imágenes -->
+        <section class="gallery-section">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="image1.jpg" alt="Imagen 1"></div>
+                    <div class="swiper-slide"><img src="image2.jpg" alt="Imagen 2"></div>
+                    <div class="swiper-slide"><img src="image3.png" alt="Imagen 3"></div>
+                    <div class="swiper-slide"><img src="image4.png" alt="Imagen 4"></div>
+                    <div class="swiper-slide"><img src="image5.jpg" alt="Imagen 5"></div>
+                    <div class="swiper-slide"><img src="image6.jpg" alt="Imagen 6"></div>
+                    <!-- Añadir más imágenes según sea necesario -->
+                </div>
+                <!-- Botones de navegación -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <!-- Paginación -->
+                <div class="swiper-pagination"></div>
             </div>
         </section>
 
-        <!-- Sección de Lo Más Popular -->
-        <section class="popular-section">
-            <div class="container">
-                <h2>Lo Más Popular</h2>
-                <div class="content-grid">
-                    <!-- Artículo 1 -->
-                    <div class="content-item">
-                        <img src="popular1.jpg" alt="Título del artículo popular 1">
-                        <div class="content-item-content">
-                            <h3>Título del Artículo Popular 1</h3>
-                            <p>Resumen breve del artículo popular.</p>
-                            <a href="articulo-popular1.html" class="cta-button">Leer Más</a>
-                        </div>
-                    </div>
-                    <!-- Artículo 2 -->
-                    <div class="content-item">
-                        <img src="popular2.jpg" alt="Título del artículo popular 2">
-                        <div class="content-item-content">
-                            <h3>Título del Artículo Popular 2</h3>
-                            <p>Resumen breve del artículo popular.</p>
-                            <a href="articulo-popular2.html" class="cta-button">Leer Más</a>
-                        </div>
-                    </div>
-                    <!-- Artículo 3 -->
-                    <div class="content-item">
-                        <img src="popular3.jpg" alt="Título del artículo popular 3">
-                        <div class="content-item-content">
-                            <h3>Título del Artículo Popular 3</h3>
-                            <p>Resumen breve del artículo popular.</p>
-                            <a href="articulo-popular3.html" class="cta-button">Leer Más</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <!-- Botón para controlar la música -->
+        <div id="music-controls">
+            <button id="music-control" aria-label="Controlar la música">
+                <i class="fas fa-play"></i>
+            </button>
+            <input type="range" id="volume-control" min="0" max="100" value="50" aria-label="Control de volumen">
+        </div>
 
-        <!-- Sección de Tendencias en Feng Shui -->
-        <section class="trends-section">
-            <div class="container">
-                <h2>Tendencias en Feng Shui</h2>
-                <div class="content-grid">
-                    <!-- Artículo 1 -->
-                    <div class="content-item">
-                        <img src="tendencia1.jpg" alt="Título de la tendencia 1">
-                        <div class="content-item-content">
-                            <h3>Título de la Tendencia 1</h3>
-                            <p>Resumen breve de la tendencia actual.</p>
-                            <a href="tendencia1.html" class="cta-button">Leer Más</a>
-                        </div>
-                    </div>
-                    <!-- Artículo 2 -->
-                    <div class="content-item">
-                        <img src="tendencia2.jpg" alt="Título de la tendencia 2">
-                        <div class="content-item-content">
-                            <h3>Título de la Tendencia 2</h3>
-                            <p>Resumen breve de la tendencia actual.</p>
-                            <a href="tendencia2.html" class="cta-button">Leer Más</a>
-                        </div>
-                    </div>
-                    <!-- Artículo 3 -->
-                    <div class="content-item">
-                        <img src="tendencia3.jpg" alt="Título de la tendencia 3">
-                        <div class="content-item-content">
-                            <h3>Título de la Tendencia 3</h3>
-                            <p>Resumen breve de la tendencia actual.</p>
-                            <a href="tendencia3.html" class="cta-button">Leer Más</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
+        <!-- Archivo de audio para la música de fondo -->
+        <audio id="background-music" src="musica-de-fondo.mp3" loop></audio>
     </main>
 
     <footer>
@@ -183,6 +139,7 @@
     </footer>
 
     <!-- Scripts -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
         // Mostrar la fecha actual
         const currentDate = new Date();
@@ -195,7 +152,39 @@
         localStorage.setItem('visitorCount', visitorCount);
         document.getElementById('count').textContent = visitorCount;
 
-        // Animaciones con GSAP
+        // Control de música
+        const musicControl = document.getElementById('music-control');
+        const backgroundMusic = document.getElementById('background-music');
+        const volumeControl = document.getElementById('volume-control');
+        let isPlaying = false;
+
+        backgroundMusic.volume = volumeControl.value / 100; // Establecer volumen inicial
+
+        // Alternar entre reproducir y pausar la música
+        musicControl.addEventListener('click', function () {
+            if (isPlaying) {
+                backgroundMusic.pause();
+                musicControl.innerHTML = '<i class="fas fa-play"></i>';
+            } else {
+                backgroundMusic.play();
+                musicControl.innerHTML = '<i class="fas fa-pause"></i>';
+            }
+            isPlaying = !isPlaying;
+        });
+
+        // Controlar el volumen
+        volumeControl.addEventListener('input', function () {
+            backgroundMusic.volume = volumeControl.value / 100;
+        });
+
+        // Reproducir música automáticamente
+        window.addEventListener('load', function () {
+            backgroundMusic.play();
+            isPlaying = true;
+            musicControl.innerHTML = '<i class="fas fa-pause"></i>';
+        });
+
+        // GSAP para animaciones
         gsap.registerPlugin(ScrollTrigger);
 
         gsap.from('.hero-content', {
@@ -216,9 +205,33 @@
                 toggleActions: 'play none none none'
             }
         });
-    </script>
 
-    <!-- Script de Vercel Analytics -->
-    <script src="https://unpkg.com/@vercel/analytics/browser.js" defer></script>
+        // Swiper.js para la galería de imágenes
+        const swiper = new Swiper('.swiper-container', {
+            slidesPerView: 3,
+            spaceBetween: 30,
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            effect: 'coverflow',
+            coverflowEffect: {
+                rotate: 50,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: true,
+            },
+        });
+    </script>
 </body>
 </html>
