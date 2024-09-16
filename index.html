@@ -15,6 +15,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="logo.png">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V2R04SMHMB"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-V2R04SMHMB');
+    </script>
+
 </head>
 <body class="index">
     <header>
@@ -32,7 +43,13 @@
         
             <div class="date" id="current-date"></div>
         </div>
-        <nav class="container">
+
+        <!-- Botón de menú hamburguesa -->
+        <div class="menu-toggle" id="mobile-menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <nav class="container" id="mobile-menu">
             <ul>
                 <li><a href="index.html" class="active">Inicio</a></li>
                 <li><a href="quien-soy.html">Quién Soy</a></li>
@@ -57,54 +74,52 @@
             </div>
         </section>
 
-<!-- Sección de Noticias Destacadas -->
-<section class="news-section">
-    <div class="container">
-        <h2>Noticias Destacadas de Feng Shui</h2>
-        <div class="content-grid">
-            <!-- Noticia 1 -->
-            <div class="content-item">
-                <img src="noticia.jpg" alt="Feng Shui en el Hogar Crea Armonía en 2024">
-                <div class="content-item-content">
-                    <h3>Feng Shui en el Hogar : Crea Armonía en 2024</h3>
-                    <p>Descubre cómo el Feng Shui puede ayudarte a atraer la prosperidad en 2024. Te ofrecemos consejos clave para optimizar tu espacio...</p>
-                    <a href="noticia1.html" class="cta-button">Leer Más</a>
+        <!-- Sección de Noticias Destacadas -->
+        <section class="news-section">
+            <div class="container">
+                <h2>Noticias Destacadas de Feng Shui</h2>
+                <div class="content-grid">
+                    <!-- Noticia 1 -->
+                    <div class="content-item">
+                        <img src="noticia.jpg" alt="Feng Shui en el Hogar Crea Armonía en 2024">
+                        <div class="content-item-content">
+                            <h3>Feng Shui en el Hogar: Crea Armonía en 2024</h3>
+                            <p>Descubre cómo el Feng Shui puede ayudarte a atraer la prosperidad en 2024. Te ofrecemos consejos clave para optimizar tu espacio...</p>
+                            <a href="noticia1.html" class="cta-button">Leer Más</a>
+                        </div>
+                    </div>
+                    <!-- Noticia 2 -->
+                    <div class="content-item">
+                        <img src="armonia.jpeg" alt="Feng Shui para la Salud">
+                        <div class="content-item-content">
+                            <h3>Feng Shui para Mejorar la Salud en 2024</h3>
+                            <p>La salud es primordial. Aprende cómo el Feng Shui puede mejorar tu bienestar físico y emocional en el nuevo año con simples ajustes...</p>
+                            <a href="noticia2.html" class="cta-button">Leer Más</a>
+                        </div>
+                    </div>
+                    <!-- Noticia 3 -->
+                    <div class="content-item">
+                        <img src="kua.jpg" alt="Número Kua">
+                        <div class="content-item-content">
+                            <h3>Descubre Tu Número Kua y Cómo Impacta en Tu Vida</h3>
+                            <p>El número Kua es una herramienta fundamental en el Feng Shui para determinar direcciones favorables y cómo aprovechar la energía de tu entorno...</p>
+                            <a href="noticia3.html" class="cta-button">Leer Más</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <!-- Noticia 2 -->
-            <div class="content-item">
-                <img src="armonia.jpeg" alt="Feng Shui para la Salud">
-                <div class="content-item-content">
-                    <h3>Feng Shui para Mejorar la Salud en 2024</h3>
-                    <p>La salud es primordial. Aprende cómo el Feng Shui puede mejorar tu bienestar físico y emocional en el nuevo año con simples ajustes...</p>
-                    <a href="noticia2.html" class="cta-button">Leer Más</a>
-                </div>
-            </div>
-            <!-- Noticia 3 -->
-            <div class="content-item">
-                <img src="kua.jpg" alt="Número Kua">
-                <div class="content-item-content">
-                    <h3>Descubre Tu Número Kua y Cómo Impacta en Tu Vida</h3>
-                    <p>El número Kua es una herramienta fundamental en el Feng Shui para determinar direcciones favorables y cómo aprovechar la energía de tu entorno...</p>
-                    <a href="noticia3.html" class="cta-button">Leer Más</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
+        </section>
 
         <!-- Sección de la Galería de Imágenes -->
         <section class="gallery-section">
             <div class="swiper-container">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="image1.jpg" alt="Imagen 1"></div>
+                    <div class="swiper-slide"><img src="image1.png" alt="Imagen 1"></div>
                     <div class="swiper-slide"><img src="image2.jpg" alt="Imagen 2"></div>
                     <div class="swiper-slide"><img src="image3.png" alt="Imagen 3"></div>
                     <div class="swiper-slide"><img src="image4.png" alt="Imagen 4"></div>
                     <div class="swiper-slide"><img src="image5.jpg" alt="Imagen 5"></div>
                     <div class="swiper-slide"><img src="image6.jpg" alt="Imagen 6"></div>
-                    <!-- Añadir más imágenes según sea necesario -->
                 </div>
                 <!-- Botones de navegación -->
                 <div class="swiper-button-next"></div>
@@ -147,12 +162,6 @@
         const currentDate = new Date();
         const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
         document.getElementById('current-date').textContent = currentDate.toLocaleDateString('es-ES', options);
-
-        // Contador de visitantes
-        let visitorCount = localStorage.getItem('visitorCount') || 0;
-        visitorCount++;
-        localStorage.setItem('visitorCount', visitorCount);
-        document.getElementById('count').textContent = visitorCount;
 
         // Control de música
         const musicControl = document.getElementById('music-control');
@@ -233,6 +242,15 @@
                 modifier: 1,
                 slideShadows: true,
             },
+        });
+
+        // Menú plegable para móviles
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuToggle.addEventListener('click', function () {
+            mobileMenu.classList.toggle('active'); // Alterna la clase "active"
+            mobileMenuToggle.classList.toggle('active'); // Alterna el icono del botón
         });
     </script>
 </body>

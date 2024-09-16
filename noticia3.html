@@ -9,6 +9,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
     <link rel="icon" type="image/png" href="logo.png">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V2R04SMHMB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V2R04SMHMB');
+</script>
+
 </head>
 <body>
     <header>
@@ -37,11 +47,14 @@
     <div class="header-spacer"></div>
 
     <main class="container">
-        <h1>Descubre tu Número Kua y Transforma tu Vida</h1> 
+        <h1>Descubre tu Número Kua y Transforma tu Vida</h1>
         <section class="news-content">
             <p>El Número Kua es una herramienta ancestral del Feng Shui que te guía en tus decisiones importantes. Calculado según tu fecha de nacimiento y género, te revela las mejores direcciones para la prosperidad, salud y relaciones.</p>
 
-            <img src="kua.jpg" alt="Brújula de Kua" class="responsive-image">
+            <!-- Imagen ajustada -->
+            <div class="image-kua-container">
+                <img src="kua.jpg" alt="Brújula de Kua" class="rounded-image">
+            </div>
 
             <h2>Direcciones Favorables según tu Número Kua</h2>
             <p>Una vez que descubras tu Número Kua, podrás orientar mejor tu espacio para atraer energía positiva. Las direcciones auspiciosas, como Sheng Qi y Nian Yan, son ideales para el éxito y el amor.</p>
@@ -53,6 +66,7 @@
                 <li><strong>Salud:</strong> Utiliza la dirección de Tian Yi para fortalecer tu energía física y mental.</li>
             </ul>
 
+            <!-- Ajuste del botón -->
             <div class="cta-container">
                 <a href="servicios.html" class="cta-button">¡Calcula tu Número Kua!</a>
             </div>
@@ -70,7 +84,7 @@
                 <li><a href="contacto.html">Contacto</a></li>
             </ul>
         </nav>
-        <div id="visitor-counter">Visitantes: <span id="count">0</span></div> 
+        <div id="visitor-counter">Visitantes: <span id="count">0</span></div>
     </footer>
 
     <!-- Botón de control de música -->
