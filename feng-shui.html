@@ -11,15 +11,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-V2R04SMHMB"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-V2R04SMHMB');
-</script>
-
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V2R04SMHMB"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-V2R04SMHMB');
+    </script>
 </head>
 <body>
     <header>
@@ -121,16 +119,17 @@
             <h2>El Mapa Bagua</h2>
             <p>El Bagua es una herramienta fundamental que divide el espacio en nueve áreas, cada una correspondiente a un aspecto diferente de la vida.</p>
             <div class="bagua-grid">
-                <div class="bagua-area riqueza">Riqueza & Prosperidad</div>
-                <div class="bagua-area fama">Fama & Reputación</div>
-                <div class="bagua-area amor">Amor & Matrimonio</div>
-                <div class="bagua-area salud">Salud & Familia</div>
-                <div class="bagua-area centro">Centro de la casa</div>
-                <div class="bagua-area hijos">Hijos & Creatividad</div>
-                <div class="bagua-area saber">Saber & Cultura</div>
-                <div class="bagua-area carrera">Carrera profesional & Rumbo de vida</div>
-                <div class="bagua-area amistades">Amistades & Viajes</div>
+                <div class="bagua-area riqueza">Puede traer enfermedad (SE 2)</div>
+                <div class="bagua-area fama">Beneficia a ventas y a la comunicación. (S 7)</div>
+                <div class="bagua-area amor">Ganacias, inversión y riqueza. <br> (SO 9)</div>
+                <div class="bagua-area salud">Indispensable en tu trabajo y disciplina. (E 1)</div>
+                <div class="bagua-area centro">Terminar malos habitos. (Centro 3)</div>
+                <div class="bagua-area hijos">Perdidas, liderazgo en crisis. <br> (O 5)</div>
+                <div class="bagua-area saber">Mantener trabajo y estabilidad. (NE 6)</div>
+                <div class="bagua-area carrera">Incrementar ventas, trabajo duro. (N 8)</div>
+                <div class="bagua-area amistades">Estudio y conocimiento (NO 4)</div>
             </div>
+            <br>
             <div class="bagua-entrada">ENTRADA PRINCIPAL</div>
         </div>
     </main>
@@ -147,7 +146,6 @@
 
     <footer>
         <p>&copy; 2023 Armonía Feng Shui. Todos los derechos reservados.</p>
-        <div id="visitor-counter">Visitantes: <span id="count">0</span></div>
     </footer>
 
     <script>
@@ -156,15 +154,12 @@
         const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
         document.getElementById('current-date').textContent = currentDate.toLocaleDateString('es-ES', options);
 
-        // Contador de visitantes
-        let visitorCount = localStorage.getItem('visitorCount') || 0;
-        visitorCount++;
-        localStorage.setItem('visitorCount', visitorCount);
-        document.getElementById('count').textContent = visitorCount;
 
-        // Animaciones con GSAP
+
+        // Animaciones con GSAP y ScrollTrigger
         gsap.registerPlugin(ScrollTrigger);
 
+        // Animación para la introducción de Feng Shui
         gsap.from('.feng-shui-intro', {
             opacity: 0,
             y: 50,
@@ -175,6 +170,7 @@
             }
         });
 
+        // Animación para los elementos del pentagrama
         gsap.from('.element', {
             opacity: 0,
             scale: 0.8,
@@ -186,6 +182,7 @@
             }
         });
 
+        // Animación para las tarjetas de los principios del Feng Shui
         gsap.from('.principle-card', {
             opacity: 0,
             y: 50,
@@ -197,6 +194,7 @@
             }
         });
 
+        // Animación para la sección del Mapa Bagua
         gsap.from('.bagua-section', {
             opacity: 0,
             y: 50,

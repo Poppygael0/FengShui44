@@ -10,15 +10,16 @@
     <link rel="icon" type="image/png" href="logo.png">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-V2R04SMHMB"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V2R04SMHMB"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-  gtag('config', 'G-V2R04SMHMB');
-</script>
+      gtag('config', 'G-V2R04SMHMB');
+    </script>
 
 </head>
 <body>
@@ -100,6 +101,17 @@
                 </div>
             </div>
         </section>
+        
+        <section class="book-promotion">
+            <h2>Descubre el Libro de Feng Shui</h2>
+            <div class="book-info">
+                <img src="libro.jpg" alt="Libro de Feng Shui - Amor y Riqueza" class="book-cover">
+                <div class="book-details">
+                    <p>"Amor y Riqueza: Feng Shui para potencializar tu vida" es una guía práctica para mejorar el flujo de energía en tu hogar y atraer bienestar y prosperidad.</p>
+                    <a href="https://www.amazon.com/Amor-riqueza-Feng-Shui-potencializar-ebook/dp/B0BT8CC9DR" class="cta-button" target="_blank">Comprar en Amazon</a>
+                </div>
+            </div>
+        </section>
 
         <section class="testimonials-section">
             <h2>Lo que Dicen Mis Clientes</h2>
@@ -141,119 +153,117 @@
                 <li><a href="contacto.html">Contacto</a></li>
             </ul>
         </nav>
-        <div id="visitor-counter">Visitantes: <span id="count">0</span></div>
     </footer>
 
     <script>
-        // Mostrar la fecha actual
-        const currentDate = new Date();
-        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-        document.getElementById('current-date').textContent = currentDate.toLocaleDateString('es-ES', options);
-
-        // Contador de visitantes
-        let visitorCount = localStorage.getItem('visitorCount') || 0;
-        visitorCount++;
-        localStorage.setItem('visitorCount', visitorCount);
-        document.getElementById('count').textContent = visitorCount;
-
-        // Animaciones GSAP
-        gsap.registerPlugin(ScrollTrigger);
-
-        gsap.from('.profile-image', {
-            opacity: 0,
-            scale: 0.8,
-            duration: 1,
-            scrollTrigger: {
-                trigger: '.profile-section',
-                start: 'top 80%',
-                toggleActions: 'play none none none'
-            }
-        });
-
-        gsap.from('.profile-content', {
-            opacity: 0,
-            x: 50,
-            duration: 1,
-            scrollTrigger: {
-                trigger: '.profile-section',
-                start: 'top 80%',
-                toggleActions: 'play none none none'
-            }
-        });
-
-        gsap.from('.experience-item', {
-            opacity: 0,
-            x: -50,
-            stagger: 0.2,
-            duration: 0.8,
-            scrollTrigger: {
-                trigger: '.experience-section',
-                start: 'top 80%',
-                toggleActions: 'play none none none'
-            }
-        });
-
-        gsap.from('.philosophy-item', {
-            opacity: 0,
-            x: 50,
-            stagger: 0.2,
-            duration: 0.8,
-            scrollTrigger: {
-                trigger: '.philosophy-section',
-                start: 'top 80%',
-                toggleActions: 'play none none none'
-            }
-        });
-
-        gsap.from('.testimonial-item', {
-            opacity: 0,
-            y: 50,
-            stagger: 0.2,
-            duration: 0.8,
-            scrollTrigger: {
-                trigger: '.testimonials-section',
-                start: 'top 80%',
-                toggleActions: 'play none none none'
-            }
-        });
-
-        // Control de música
-        const musicControl = document.getElementById('music-control');
-        const backgroundMusic = document.getElementById('background-music');
-        const volumeControl = document.getElementById('volume-control');
-        let isPlaying = false;
-
-        backgroundMusic.volume = volumeControl.value / 100;
-
-        musicControl.addEventListener('click', function () {
-            if (isPlaying) {
-                backgroundMusic.pause();
-                musicControl.innerHTML = '<i class="fas fa-play"></i>';
-            } else {
-                backgroundMusic.play();
-                musicControl.innerHTML = '<i class="fas fa-pause"></i>';
-            }
-            isPlaying = !isPlaying;
-        });
-
-        volumeControl.addEventListener('input', function () {
+        document.addEventListener("DOMContentLoaded", function() {
+            // Mostrar la fecha actual
+            const currentDate = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById('current-date').textContent = currentDate.toLocaleDateString('es-ES', options);
+    
+            // Verificación de la carga de GSAP y ScrollTrigger
+            console.log("GSAP Version:", gsap.version);
+            console.log("ScrollTrigger Loaded:", typeof ScrollTrigger !== "undefined");
+    
+            // Animaciones GSAP
+            gsap.registerPlugin(ScrollTrigger);
+    
+            gsap.from('.profile-image', {
+                opacity: 0,
+                scale: 0.8,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: '.profile-section',
+                    start: 'top 90%', // Ajusta el punto de inicio según sea necesario
+                    toggleActions: 'play none none none'
+                }
+            });
+    
+            gsap.from('.profile-content', {
+                opacity: 0,
+                x: 50,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: '.profile-section',
+                    start: 'top 90%',
+                    toggleActions: 'play none none none'
+                }
+            });
+    
+            gsap.from('.experience-item', {
+                opacity: 0,
+                x: -50,
+                stagger: 0.2,
+                duration: 0.8,
+                scrollTrigger: {
+                    trigger: '.experience-section',
+                    start: 'top 90%',
+                    toggleActions: 'play none none none'
+                }
+            });
+    
+            gsap.from('.philosophy-item', {
+                opacity: 0,
+                x: 50,
+                stagger: 0.2,
+                duration: 0.8,
+                scrollTrigger: {
+                    trigger: '.philosophy-section',
+                    start: 'top 90%',
+                    toggleActions: 'play none none none'
+                }
+            });
+    
+            gsap.from('.testimonial-item', {
+                opacity: 0,
+                y: 50,
+                stagger: 0.2,
+                duration: 0.8,
+                scrollTrigger: {
+                    trigger: '.testimonials-section',
+                    start: 'top 90%',
+                    toggleActions: 'play none none none'
+                }
+            });
+    
+            // Control de música
+            const musicControl = document.getElementById('music-control');
+            const backgroundMusic = document.getElementById('background-music');
+            const volumeControl = document.getElementById('volume-control');
+            let isPlaying = false;
+    
             backgroundMusic.volume = volumeControl.value / 100;
-        });
-
-        window.addEventListener('load', function () {
-            backgroundMusic.play();
-            isPlaying = true;
-            musicControl.innerHTML = '<i class="fas fa-pause"></i>';
-        });
-
-        // Menú plegable para móviles
-        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuToggle.addEventListener('click', function () {
-            mobileMenu.classList.toggle('active');
-            mobileMenuToggle.classList.toggle('active');
+    
+            musicControl.addEventListener('click', function () {
+                if (isPlaying) {
+                    backgroundMusic.pause();
+                    musicControl.innerHTML = '<i class="fas fa-play"></i>';
+                } else {
+                    backgroundMusic.play();
+                    musicControl.innerHTML = '<i class="fas fa-pause"></i>';
+                }
+                isPlaying = !isPlaying;
+            });
+    
+            volumeControl.addEventListener('input', function () {
+                backgroundMusic.volume = volumeControl.value / 100;
+            });
+    
+            window.addEventListener('load', function () {
+                backgroundMusic.play();
+                isPlaying = true;
+                musicControl.innerHTML = '<i class="fas fa-pause"></i>';
+            });
+    
+            // Menú plegable para móviles
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+    
+            mobileMenuToggle.addEventListener('click', function () {
+                mobileMenu.classList.toggle('active');
+                mobileMenuToggle.classList.toggle('active');
+            });
         });
     </script>
-</body>
-</html>
+    

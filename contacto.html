@@ -109,7 +109,6 @@
                 <li><a href="contacto.html" class="active">Contacto</a></li>
             </ul>
         </nav>
-        <div id="visitor-counter">Visitantes: <span id="count">0</span></div>
     </footer>
 
     <script>
@@ -118,11 +117,6 @@
         const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
         document.getElementById('current-date').textContent = currentDate.toLocaleDateString('es-ES', options);
 
-        // Contador de visitantes
-        let visitorCount = localStorage.getItem('visitorCount') || 0;
-        visitorCount++;
-        localStorage.setItem('visitorCount', visitorCount);
-        document.getElementById('count').textContent = visitorCount;
 
         // Validación con JavaScript
         document.getElementById('contact-form').addEventListener('submit', function(event) {
