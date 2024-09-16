@@ -15,6 +15,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="logo.png">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V2R04SMHMB"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-V2R04SMHMB');
+    </script>
+
 </head>
 <body class="index">
     <header>
@@ -72,7 +83,7 @@
                     <div class="content-item">
                         <img src="noticia.jpg" alt="Feng Shui en el Hogar Crea Armonía en 2024">
                         <div class="content-item-content">
-                            <h3>Feng Shui en el Hogar : Crea Armonía en 2024</h3>
+                            <h3>Feng Shui en el Hogar: Crea Armonía en 2024</h3>
                             <p>Descubre cómo el Feng Shui puede ayudarte a atraer la prosperidad en 2024. Te ofrecemos consejos clave para optimizar tu espacio...</p>
                             <a href="noticia1.html" class="cta-button">Leer Más</a>
                         </div>
@@ -151,12 +162,6 @@
         const currentDate = new Date();
         const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
         document.getElementById('current-date').textContent = currentDate.toLocaleDateString('es-ES', options);
-
-        // Contador de visitantes
-        let visitorCount = localStorage.getItem('visitorCount') || 0;
-        visitorCount++;
-        localStorage.setItem('visitorCount', visitorCount);
-        document.getElementById('count').textContent = visitorCount;
 
         // Control de música
         const musicControl = document.getElementById('music-control');
@@ -240,13 +245,13 @@
         });
 
         // Menú plegable para móviles
-    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
 
-    mobileMenuToggle.addEventListener('click', function () {
-        mobileMenu.classList.toggle('active'); // Alterna la clase "active"
-        mobileMenuToggle.classList.toggle('active'); // Alterna el icono del botón
-    });
+        mobileMenuToggle.addEventListener('click', function () {
+            mobileMenu.classList.toggle('active'); // Alterna la clase "active"
+            mobileMenuToggle.classList.toggle('active'); // Alterna el icono del botón
+        });
     </script>
 </body>
 </html>
