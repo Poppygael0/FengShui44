@@ -240,17 +240,19 @@ body.index .header-spacer {
 .cta-button {
     display: inline-block;
     background-color: var(--secondary-color);
-    color: var(--primary-color);
+    color: white;
     padding: 15px 25px;
-    text-decoration: none;
     font-weight: bold;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .cta-button:hover {
     background-color: var(--accent-color);
     color: white;
+    transform: scale(1.05);
+
 }
 
 
@@ -393,6 +395,9 @@ body.index .header-spacer {
     align-items: center;
     padding: 20px;
     margin: 20px 0;
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: center;
 }
 
 .profile-image {
@@ -468,6 +473,7 @@ body.index .header-spacer {
     text-align: center;
 }
 
+/* Contenedor del pentagrama */
 .element-wheel {
     position: relative;
     width: 400px;
@@ -475,6 +481,7 @@ body.index .header-spacer {
     margin: 0 auto;
 }
 
+/* Líneas del pentagrama */
 .pentagram-lines {
     position: absolute;
     top: 0;
@@ -486,6 +493,7 @@ body.index .header-spacer {
     stroke-width: 2;
 }
 
+/* Estilo de los elementos */
 .element {
     position: absolute;
     width: 80px;
@@ -500,37 +508,19 @@ body.index .header-spacer {
     transition: transform 0.3s ease;
 }
 
-.element:hover {
-    transform: scale(1.1);
-}
-
-/* Posiciones de los elementos */
+/* Posicionamiento preciso de los elementos */
 .element.fire {
-    top: 0%;
+    top: 0; /* Coordenada calculada para centrar el círculo Fuego */
     left: 50%;
     transform: translate(-50%, 0);
     background-color: #FF5722;
 }
 
 .element.wood {
-    top: 38%;
-    left: 90%;
+    top: 38%; /* Ajuste de top */
+    left: 90%; /* Ajuste de left */
     transform: translate(-50%, -50%);
     background-color: #4CAF50;
-}
-
-.element.earth {
-    top: 85%;
-    left: 68%;
-    transform: translate(-50%, -50%);
-    background-color: #FFC107;
-}
-
-.element.metal {
-    top: 85%;
-    left: 32%;
-    transform: translate(-50%, -50%);
-    background-color: #9E9E9E;
 }
 
 .element.water {
@@ -538,6 +528,25 @@ body.index .header-spacer {
     left: 10%;
     transform: translate(-50%, -50%);
     background-color: #2196F3;
+}
+
+.element.earth {
+    top: 85%;  
+    left: 78%;  
+    transform: translate(-50%, -50%);
+    background-color: #FFC107;
+}
+
+.element.metal {
+    top: 85%;  
+    left: 22%;  
+    transform: translate(-50%, -50%);
+    background-color: #9E9E9E;
+}
+
+/* Efecto hover para los elementos */
+.element:hover {
+    transform: scale(1.1);
 }
 
 /* Sección de Principios del Feng Shui */
@@ -598,16 +607,18 @@ body.index .header-spacer {
     margin-bottom: 40px;
 }
 
-.bagua-2d {
-    width: 300px;
-    height: 300px;
-    margin: 0 auto;
+.bagua-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    gap: 5px;
-    background-color: #f0f0f0;
-    padding: 5px;
+    gap: 0; /* Ajuste de gap para que las áreas estén alineadas sin espacios */
+    width: 300px;
+    height: 300px; /* Asegura que el contenedor tenga un tamaño uniforme */
+    margin: 0 auto;
+    background-color: #fff;
+    border: 2px solid #000;
+    padding: 0; /* Elimina padding para evitar que se desborde */
+    box-sizing: border-box; /* Asegura que el borde esté dentro del contenedor */
     border-radius: 10px;
 }
 
@@ -616,25 +627,38 @@ body.index .header-spacer {
     justify-content: center;
     align-items: center;
     font-weight: bold;
+    text-align: center;
     color: white;
-    border-radius: 5px;
+    border-radius: 0; /* Elimina el borde redondeado para alineación perfecta */
+    font-size: 14px;
     transition: transform 0.3s ease;
+    box-sizing: border-box; /* Mantiene los bordes dentro del contenedor */
+    padding: 10px;
+    border: 1px solid #fff; /* Añade separación entre las áreas */
 }
 
 .bagua-area:hover {
     transform: scale(1.05);
 }
 
-/* Colores por cada área del Bagua */
-.bagua-area:nth-child(1) { background-color: #000000; }  /* Carrera */
-.bagua-area:nth-child(2) { background-color: #0000FF; }  /* Conocimiento */
-.bagua-area:nth-child(3) { background-color: #008000; }  /* Familia */
-.bagua-area:nth-child(4) { background-color: #800080; }  /* Riqueza */
-.bagua-area:nth-child(5) { background-color: #FFFF00; color: #000; } /* Centro */
-.bagua-area:nth-child(6) { background-color: #FF0000; }  /* Fama */
-.bagua-area:nth-child(7) { background-color: #FFC0CB; }  /* Relaciones */
-.bagua-area:nth-child(8) { background-color: #FFFFFF; color: #000; } /* Hijos */
-.bagua-area:nth-child(9) { background-color: #808080; }  /* Ayudantes */
+/* Colores específicos por área */
+.bagua-area.riqueza { background-color: #D32F2F; } /* Riqueza */
+.bagua-area.fama { background-color: #BA68C8; } /* Fama */
+.bagua-area.amor { background-color: #F8BBD0; } /* Amor */
+.bagua-area.salud { background-color: #4CAF50; } /* Salud */
+.bagua-area.centro { background-color: #FBC02D; color: black; } /* Centro */
+.bagua-area.hijos { background-color: #80DEEA; color: black; } /* Hijos */
+.bagua-area.saber { background-color: #1976D2; } /* Saber */
+.bagua-area.carrera { background-color: #0D47A1; } /* Carrera */
+.bagua-area.amistades { background-color: #BDBDBD; color: black; } /* Amistades */
+
+/* Estilo de la entrada principal */
+.bagua-entrada {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
 
 /* Formulario de Contacto */
 .contact-section {
@@ -781,10 +805,10 @@ footer nav ul li a:hover {
 /* Estilos generales para las imágenes responsivas */
         /* Estilos generales para las imágenes responsivas */
         .responsive-image {
-            max-width: 300px; 
+            max-width: 250px; 
             height: auto; 
             display: block; 
-            margin: 10px; 
+            margin: 0 auto; 
             border: 1px solid #ccc; 
             padding: 5px;
             box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); 
@@ -804,10 +828,105 @@ footer nav ul li a:hover {
             clear: right; 
         }    
 
+    /* Estilos para imágenes con bordes redondeados */
+.rounded-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid var(--accent-color);
+}
+
+/* Estilos para imágenes con sombra y borde */
+.shadowed-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+    border: 2px solid var(--secondary-color);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para imágenes circulares */
+.circular-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Ajustes para el contenedor de imágenes */
+.image-kua-container {
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.image-rounded-shadow {
+    max-width: 80%; /* Ajustar según el tamaño deseado */
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición en hover */
+}
+
+/* Imagen con filtro de saturación y escala en hover */
+.image-rounded-shadow:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4); /* Aumentar sombra en hover */
+    filter: saturate(1.2); /* Incrementar saturación en hover */
+}
+
+nav.container {
+    display: flex;
+    justify-content: center;
+    background-color: var(--primary-color);
+        z-index: 1000; /* Asegura que el menú esté por encima de otros elementos */
+
+}
+.menu-toggle {
+    display: none;
+}
+
 /* Media Queries */
 @media screen and (max-width: 768px) {
     :root {
         --header-height: 150px;
+    }
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 2rem;
+        color: white;
+        z-index: 1001;
+    }
+
+    nav.container {
+        display: none;
+        flex-direction: column;
+        text-align: center;
+        background-color: var(--primary-color);
+    }
+
+    nav.container.active {
+        display: flex; /* Mostrar el menú cuando esté activo en móviles */
+    }
+
+    nav.container ul {
+        flex-direction: column; /* Convertir los ítems en una columna en móviles */
+        padding: 0;
+    }
+
+    nav.container ul li {
+        margin: 15px 0;
     }
 
     .header-spacer {
@@ -863,17 +982,14 @@ footer nav ul li a:hover {
         font-size: 40px;
     }
 
-    .element {
-        width: 80px;
-        height: 80px;
-    }
-
     .principle-card {
         padding: 15px;
     }
 
     .container {
-        padding: 0 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
     }
 
     main {
@@ -883,8 +999,7 @@ footer nav ul li a:hover {
     .content-item, .experience-item, .philosophy-item {
         padding: 15px 20px;
     }
-
     footer {
         padding: 20px 20px;
     }
-}
+ }
