@@ -140,7 +140,7 @@
 
         <section class="payment-terms-section">
             <h2>Términos de Pago</h2>
-            <p class="disclaimer">*Todos nuestros servicios requieren un anticipo del 50% antes de comenzar el trabajo. El pago restante se realizará una vez que el estudio o consultoría ha sido completado. Este anticipo es no reembolsable y asegura la reserva de tu consulta, además de cubrir los costos iniciales de análisis y planificación. Aseguramos la entrega de un servicio profesional y de calidad. Por favor, consulta con nuestro equipo si tienes preguntas adicionales sobre nuestras políticas de pago.*</p>
+            <p class="disclaimer">*Todos nuestros servicios requieren un anticipo del 50% antes de comenzar el trabajo. El pago restante se realizará una vez que el estudio o consultoría ha sido completado. Este anticipo es no reembolsable y asegura la reserva de tu consulta, además de cubrir los costos iniciales de análisis y planificación. Aseguramos la entrega de un servicio profesional y de calidad. Por favor, consulta con nuestro equipo si tienes preguntas adicionales sobre nuestras políticas de pago. (Rango de precios: $3800-$6500)</p>
         </section>
     </main>
 
@@ -156,7 +156,6 @@
 
     <footer>
         <p>&copy; 2023 Armonía Feng Shui. Todos los derechos reservados.</p>
-        <div id="visitor-counter">Visitantes: <span id="count">0</span></div>
     </footer>
 
     <script>
@@ -165,11 +164,6 @@
         const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
         document.getElementById('current-date').textContent = currentDate.toLocaleDateString('es-ES', options);
 
-        // Contador de visitantes
-        let visitorCount = localStorage.getItem('visitorCount') || 0;
-        visitorCount++;
-        localStorage.setItem('visitorCount', visitorCount);
-        document.getElementById('count').textContent = visitorCount;
 
         // Animaciones GSAP
         gsap.registerPlugin(ScrollTrigger);

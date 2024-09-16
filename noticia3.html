@@ -27,7 +27,6 @@
                 <a href="https://www.facebook.com/Fengshui44commx/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
                 <a href="https://www.instagram.com/mfengshui44/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                 <a href="https://x.com/fengshui444" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="https://t.me/fengshui44" target="_blank" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
             </div>
             <img src="logo.png" alt="Logo de Armonía Feng Shui" class="logo">
             <div class="date" id="current-date"></div>
@@ -84,7 +83,6 @@
                 <li><a href="contacto.html">Contacto</a></li>
             </ul>
         </nav>
-        <div id="visitor-counter">Visitantes: <span id="count">0</span></div>
     </footer>
 
     <!-- Botón de control de música -->
@@ -101,11 +99,6 @@
         const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
         document.getElementById('current-date').textContent = currentDate.toLocaleDateString('es-ES', options);
 
-        // Contador de visitantes
-        let visitorCount = localStorage.getItem('visitorCount') || 0;
-        visitorCount++;
-        localStorage.setItem('visitorCount', visitorCount);
-        document.getElementById('count').textContent = visitorCount;
 
         // Control de música
         const musicControl = document.getElementById('music-control');

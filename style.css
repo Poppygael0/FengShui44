@@ -18,12 +18,15 @@
     box-sizing: border-box;
 }
 
+
+
 /* Estilos Globales */
 body {
     font-family: 'Roboto', sans-serif;
     background-color: var(--background-color);
     color: var(--text-color);
     line-height: 1.6;
+    
 }
 
 /* Contenedor Principal */
@@ -112,10 +115,17 @@ nav ul li a.active {
     height: var(--header-height);
 }
 
-/* Contenido Principal */
-main {
-    padding: 40px 0;
+body, html {
+    height: 100%; /* Asegura que el body y html ocupen toda la altura de la ventana */
+    margin: 0; /* Elimina cualquier margen predeterminado */
+    padding: 0; /* Elimina cualquier padding predeterminado */
 }
+
+main {
+    flex-grow: 1;
+}
+
+
 
 /* Títulos */
 h1, h2, h3 {
@@ -236,7 +246,6 @@ body.index .header-spacer {
     margin-bottom: 20px;
 }
 
-/* Botones */
 .cta-button {
     display: inline-block;
     background-color: var(--secondary-color);
@@ -246,14 +255,19 @@ body.index .header-spacer {
     border-radius: 30px;
     text-decoration: none;
     transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 20px; /* Espacio para separarlo del contenido superior */
 }
 
 .cta-button:hover {
     background-color: var(--accent-color);
-    color: white;
     transform: scale(1.05);
-
 }
+
+/* Asegura que no esté bloqueado por otros elementos */
+body {
+    margin-bottom: 100px; /* Ajusta el margen inferior si es necesario */
+}
+
 
 
 /* Estilos para el contenedor de música */
@@ -279,7 +293,7 @@ body.index .header-spacer {
 }
 
 #music-control {
-    background-color: var(--secondary-color);
+    background-color: transparent; /* Make the button background transparent */
     color: var(--primary-color);
     padding: 15px;
     border: none;
@@ -401,8 +415,8 @@ body.index .header-spacer {
 }
 
 .profile-image {
-    width: 150px;
-    height: 150px;
+    width: 300px; /* Aumenta el tamaño de la imagen */
+    height: 300px; /* Ajusta la altura */
     border-radius: 50%;
     object-fit: cover;
     object-position: top;
@@ -411,9 +425,10 @@ body.index .header-spacer {
 }
 
 .profile-image:hover {
-    transform: scale(1.05);
+    transform: scale(1.1);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
+
 
 .profile-content {
     flex: 2;
@@ -606,19 +621,17 @@ body.index .header-spacer {
     text-align: center;
     margin-bottom: 40px;
 }
-
 .bagua-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    gap: 0; /* Ajuste de gap para que las áreas estén alineadas sin espacios */
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+    grid-template-rows: repeat(3, 1fr); /* 3 filas */
     width: 300px;
-    height: 300px; /* Asegura que el contenedor tenga un tamaño uniforme */
+    height: 300px;
     margin: 0 auto;
-    background-color: #fff;
-    border: 2px solid #000;
-    padding: 0; /* Elimina padding para evitar que se desborde */
-    box-sizing: border-box; /* Asegura que el borde esté dentro del contenedor */
+    border: 2px solid #000; /* Borde alrededor del grid */
+    background-color: #fff; /* Fondo blanco general */
+    padding: 0;
+    box-sizing: border-box;
     border-radius: 10px;
 }
 
@@ -629,34 +642,34 @@ body.index .header-spacer {
     font-weight: bold;
     text-align: center;
     color: white;
-    border-radius: 0; /* Elimina el borde redondeado para alineación perfecta */
-    font-size: 14px;
-    transition: transform 0.3s ease;
-    box-sizing: border-box; /* Mantiene los bordes dentro del contenedor */
+    font-size: 12px; /* Ajuste del tamaño de fuente */
     padding: 10px;
-    border: 1px solid #fff; /* Añade separación entre las áreas */
+    border: 1px solid #fff; /* Bordes entre las áreas */
+    transition: transform 0.3s ease;
+    box-sizing: border-box;
 }
 
 .bagua-area:hover {
     transform: scale(1.05);
+    background-color: #e3e3e3; /* Optional hover effect */
 }
 
-/* Colores específicos por área */
-.bagua-area.riqueza { background-color: #D32F2F; } /* Riqueza */
-.bagua-area.fama { background-color: #BA68C8; } /* Fama */
-.bagua-area.amor { background-color: #F8BBD0; } /* Amor */
+/* Colors specific to each area */
+.bagua-area.riqueza { background-color: #4CAF50; } /* Riqueza */
+.bagua-area.fama { background-color: #ff0202; } /* Fama */
+.bagua-area.amor { background-color: #e6e338; color: black; } /* Amor */
 .bagua-area.salud { background-color: #4CAF50; } /* Salud */
-.bagua-area.centro { background-color: #FBC02D; color: black; } /* Centro */
-.bagua-area.hijos { background-color: #80DEEA; color: black; } /* Hijos */
-.bagua-area.saber { background-color: #1976D2; } /* Saber */
-.bagua-area.carrera { background-color: #0D47A1; } /* Carrera */
+.bagua-area.centro { background-color: #e6e338; color: black; } /* Centro */
+.bagua-area.hijos { background-color: #8a9da0; color: black; } /* Hijos */
+.bagua-area.saber { background-color: #e6e338; color: black; } /* Saber */
+.bagua-area.carrera { background-color: #20ced4; } /* Carrera */
 .bagua-area.amistades { background-color: #BDBDBD; color: black; } /* Amistades */
 
-/* Estilo de la entrada principal */
 .bagua-entrada {
     margin-top: 10px;
     font-size: 16px;
     font-weight: bold;
+    text-align: center;
 }
 
 
@@ -708,6 +721,10 @@ footer {
     text-align: center;
     padding: 20px 40px;
     margin-top: 40px;
+    /* Evita que el footer quede flotando */
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
 
 footer nav ul {
@@ -729,12 +746,6 @@ footer nav ul li a {
 
 footer nav ul li a:hover {
     color: var(--secondary-color);
-}
-
-#visitor-counter {
-    font-size: 1.2em;
-    font-weight: bold;
-    margin-top: 10px;
 }
 
 /* Galería de imágenes */
@@ -892,6 +903,57 @@ nav.container {
 }
 .menu-toggle {
     display: none;
+}
+
+.book-promotion {
+    margin: 40px 0;
+    text-align: center;
+}
+
+.book-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.book-cover {
+    max-width: 200px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animación sutil */
+}
+
+.book-cover:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+}
+
+.book-details {
+    max-width: 500px;
+    text-align: left;
+}
+
+.book-details p {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.book-details .cta-button {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-size: 1em;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.book-details .cta-button:hover {
+    background-color: var(--accent-color);
+    transform: scale(1.05);
 }
 
 /* Media Queries */
