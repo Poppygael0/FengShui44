@@ -414,15 +414,20 @@ body {
     text-align: center;
 }
 
+/* Asegúrate de que la imagen mantenga sus proporciones */
 .profile-image {
-    width: 300px; /* Aumenta el tamaño de la imagen */
-    height: 300px; /* Ajusta la altura */
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: top;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 300px; /* Tamaño más grande */
+    height: 300px; /* Mantiene el alto igual al ancho */
+    border-radius: 50%; /* Hace la imagen circular */
+    object-fit: cover; /* Asegura que la imagen no se deforme */
+    object-position: top; /* Ajusta la posición de la imagen dentro del círculo */
+    display: block;
+    margin: 0 auto; /* Centra la imagen */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra opcional */
 }
+
+
+
 
 .profile-image:hover {
     transform: scale(1.1);
