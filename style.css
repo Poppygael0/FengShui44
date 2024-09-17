@@ -416,13 +416,13 @@ body {
 
 /* Asegúrate de que la imagen mantenga sus proporciones */
 .profile-image {
-    width: 300px; /* Tamaño más grande */
-    height: 300px; /* Mantiene el alto igual al ancho */
-    border-radius: 50%; /* Hace la imagen circular */
-    object-fit: cover; /* Asegura que la imagen no se deforme */
-    object-position: top; /* Ajusta la posición de la imagen dentro del círculo */
+    width: 300px; /* Ajusta el tamaño del contenedor de la imagen */
+    height: 300px; /* Mantiene las mismas proporciones para un cuadrado */
+    border-radius: 15px; /* Bordes redondeados, ajusta si prefieres un cuadrado con bordes suaves */
+    object-fit: cover; /* Asegura que la imagen se ajuste al contenedor sin distorsionarse */
+    object-position: center top; /* Ajusta la posición para que se centre en la cara */
     display: block;
-    margin: 0 auto; /* Centra la imagen */
+    margin: 0 auto; /* Centra la imagen en la página */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra opcional */
 }
 
